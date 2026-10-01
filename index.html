@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奶龍選美大賽報名表</title>
+</head>
+<body>
+
+    <h1>奶龍選美大賽報名表</h1>
+
+    <form action="submit.php" method="post">
+
+        <p>
+            <label for="name">姓名：</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                required
+            >
+        </p>
+
+        <p>
+            <label for="student_id">學號：</label>
+            <input
+                type="text"
+                id="student_id"
+                name="student_id"
+                pattern="(?:8|9|10|11)\d{5}"
+                title="請輸入正確學號，例如 812345、912345、1012345、1112345"
+                required
+            >
+        </p>
+
+        <p>
+            <label for="email">學校 Email：</label>
+            <input
+                type="email"
+                id="email"
+                name="email"
+                pattern="s(?:8|9|10|11)\d{5}@mail\.yzu\.edu\.tw"
+                title="請輸入元智大學學校 Email"
+                placeholder="例如 s1012345@mail.yzu.edu.tw"
+                required
+            >
+        </p>
+
+        <p>
+            <label for="phone">手機：</label>
+            <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="09\d{8}"
+                title="請輸入 10 碼手機號碼，例如 0912345678"
+                placeholder="0912345678"
+                required
+            >
+        </p>
+
+        <fieldset>
+            <legend>年級：</legend>
+
+            <label>
+                <input type="radio" name="grade" value="1" required>
+                大一
+            </label>
+
+            <label>
+                <input type="radio" name="grade" value="2">
+                大二
+            </label>
+
+            <label>
+                <input type="radio" name="grade" value="3">
+                大三
+            </label>
+
+            <label>
+                <input type="radio" name="grade" value="4">
+                大四
+            </label>
+
+            <label>
+                <input type="radio" name="grade" value="5">
+                大五
+            </label>
+
+            <label>
+                <input type="radio" name="grade" value="6">
+                大六
+            </label>
+
+            <label>
+                <input type="radio" name="grade" value="7">
+                大七
+            </label>
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>想報名組別：</legend>
+
+            <label>
+                <input type="checkbox" name="category[]" value="digital">
+                電繪
+            </label>
+
+            <label>
+                <input type="checkbox" name="category[]" value="hand">
+                手繪
+            </label>
+
+            <label>
+                <input type="checkbox" name="category[]" value="doll">
+                玩偶
+            </label>
+
+            <label>
+                <input type="checkbox" name="category[]" value="3dprint">
+                3D 列印
+            </label>
+        </fieldset>
+
+        <br>
+
+        <button type="submit">送出報名</button>
+
+    </form>
+
+</body>
+</html>
