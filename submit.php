@@ -1,6 +1,22 @@
 <?php
 
 require_once('../TCPDF/tcpdf_import.php');
+require_once('config.php');
+
+try {
+    $pdo = new PDO(
+        "mysql:host=$host;dbname=$dbname;charset=utf8mb4",
+        $username,
+        $password
+    );
+
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    echo "Database connected successfully.<br>";
+
+} catch (PDOException $e) {
+    die("Database connection failed: " . $e->getMessage());
+}
 
 /*---------------- Sent Mail Start -----------------*/
 
