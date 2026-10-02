@@ -12,11 +12,55 @@ try {
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    echo "Database connected successfully.<br>";
-
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }
+
+
+// 接收表單資料
+$name = $_POST['name'];
+$student_id = $_POST['student_id'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+$grade = $_POST['grade'];
+$category = $_POST['category'];
+
+
+// 組別英文轉中文
+$category_map = [
+    'digital' => '電繪',
+    'hand' => '手繪',
+    'doll' => '玩偶',
+    '3dprint' => '3D 列印'
+];
+
+$category_chinese = [];
+
+foreach ($category as $item) {
+    if (isset($category_map[$item])) {
+        $category_chinese[] = $category_map[$item];
+    }
+}
+
+$category_text = implode('、', $category_chinese);
+
+
+// 寫入資料庫
+$sql = "INSERT INTO registrations
+        (student_id, name, email, phone, grade, category)
+        VALUES
+        (:student_id, :name, :email, :phone, :grade, :category)";
+
+$stmt = $pdo->prepare($sql);
+
+$stmt->execute([
+    ':student_id' => $student_id,
+    ':name' => $name,
+    ':email' => $email,
+    ':phone' => $phone,
+    ':grade' => $grade,
+    ':category' => $category_text
+]);
 
 /*---------------- Sent Mail Start -----------------*/
 
