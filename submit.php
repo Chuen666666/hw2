@@ -38,9 +38,26 @@ foreach ($category as $item) {
 $category_text = implode('、', $category_chinese);
 
 $html = <<<EOF
-<h1>奶龍選美大賽報名表</h1>
+<style>
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 8px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+</style>
 
 <table border="1" cellpadding="6">
+    <tr>
+        <td colspan="2" class="title">奶龍選美大賽報名表</td>
+    </tr>
     <tr>
         <td>姓名</td>
         <td>$name</td>
@@ -51,11 +68,11 @@ $html = <<<EOF
     </tr>
     <tr>
         <td>Email</td>
-        <td>$email</td>
+        <td><a href="mailto:$email">$email</a></td>
     </tr>
     <tr>
         <td>手機</td>
-        <td>$phone</td>
+        <td><a href="tel:$phone">$phone</a></td>
     </tr>
     <tr>
         <td>年級</td>
