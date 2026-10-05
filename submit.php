@@ -169,6 +169,31 @@ EOF;
 
 $pdf->writeHTML($html);
 
+$base_url = 'http://140.138.155.243/~s1151538/HW2';
+
+$pdf_url = $base_url . '/pdf/' . $pdf_filename;
+
+$qr_style = [
+    'border' => 0,
+    'vpadding' => 'auto',
+    'hpadding' => 'auto',
+    'fgcolor' => [0, 0, 0],
+    'bgcolor' => false,
+    'module_width' => 1,
+    'module_height' => 1
+];
+
+$pdf->write2DBarcode(
+    $pdf_url,      // QR Code content
+    'QRCODE,H',    // QR Code error correction
+    80,            // X pos
+    160,           // Y pos
+    50,            // width
+    50,            // height
+    $qr_style,
+    'N'
+);
+
 $pdf->lastPage();
 
 $pdf->Output($pdf_path, 'F');
