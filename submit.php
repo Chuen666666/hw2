@@ -207,3 +207,6 @@ $pdf->Output($pdf_path, 'F');
 
 
 // ---------------- Print PDF End -------------------
+
+header("Location: success.php?student_id=" . urlencode($student_id));
+exit;
