@@ -1,7 +1,11 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 require_once('../TCPDF/tcpdf_import.php');
 require_once('config.php');
+require 'vendor/autoload.php';
 
 
 // ---------------- Database Connection ----------------
@@ -85,6 +89,46 @@ $stmt->execute([
 
 // ---------------- Sent Mail Start ----------------
 
+$mail = new PHPMailer(true);
+
+try {
+    $mail->isSMTP();
+
+    $mail->Host = 'smtp.office365.com';
+    $mail->SMTPAuth = true;
+
+    $mail->Username = $smtp_username;
+    $mail->Password = $smtp_password;
+
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+    $mail->CharSet = 'UTF-8';
+
+    $mail->setFrom($smtp_username, '奶龍選美大賽');
+
+    $mail->addAddress($email, $name);
+
+    $mail->isHTML(true);
+
+    $mail->Subject = '奶龍選美大賽報名成功';
+
+    $mail->Body = "
+        <h2>奶龍選美大賽報名成功</h2>
+
+        <p>姓名：{$name}</p>
+        <p>學號：{$student_id}</p>
+        <p>學校 Email：{$email}</p>
+        <p>手機：{$phone}</p>
+        <p>年級：大{$grade}</p>
+        <p>報名組別：{$category_text}</p>
+    ";
+
+    $mail->send();
+
+} catch (Exception $e) {
+    die('寄信失敗：' . $mail->ErrorInfo);
+}
 
 // ---------------- Sent Mail End -------------------
 
