@@ -59,6 +59,9 @@ $category_text = implode('、', $category_chinese);
 $pdf_filename = 'registration_' . $student_id . '.pdf';
 $pdf_path = __DIR__ . '/pdf/' . $pdf_filename;
 
+$base_url = 'http://140.138.155.243/~s1151538/HW2';
+$pdf_url = $base_url . '/pdf/' . $pdf_filename;
+
 
 // ---------------- Save To Database ----------------
 
@@ -87,7 +90,118 @@ $stmt->execute([
 ]);
 
 
-// ---------------- Sent Mail Start ----------------
+// ---------------- Print PDF Start -----------------
+
+$pdf = new TCPDF(
+    PDF_PAGE_ORIENTATION,
+    PDF_UNIT,
+    PDF_PAGE_FORMAT,
+    true,
+    'UTF-8',
+    false
+);
+
+$pdf->setPrintHeader(false);
+$pdf->setPrintFooter(false);
+
+$pdf->SetFont('cid0jp', '', 18);
+
+$pdf->AddPage();
+
+$html = <<<EOF
+<style>
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 8px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+</style>
+
+<table border="1" cellpadding="6">
+    <tr>
+        <td colspan="2" class="title">
+            奶龍選美大賽報名表
+        </td>
+    </tr>
+
+    <tr>
+        <td>姓名</td>
+        <td>$name</td>
+    </tr>
+
+    <tr>
+        <td>學號</td>
+        <td>$student_id</td>
+    </tr>
+
+    <tr>
+        <td>Email</td>
+        <td>
+            <a href="mailto:$email">$email</a>
+        </td>
+    </tr>
+
+    <tr>
+        <td>手機</td>
+        <td>
+            <a href="tel:$phone">$phone</a>
+        </td>
+    </tr>
+
+    <tr>
+        <td>年級</td>
+        <td>大{$grade}</td>
+    </tr>
+
+    <tr>
+        <td>報名組別</td>
+        <td>$category_text</td>
+    </tr>
+</table>
+EOF;
+
+$pdf->writeHTML($html);
+
+
+// ---------------- QR Code ----------------
+
+$qr_style = [
+    'border' => 0,
+    'vpadding' => 'auto',
+    'hpadding' => 'auto',
+    'fgcolor' => [0, 0, 0],
+    'bgcolor' => false,
+    'module_width' => 1,
+    'module_height' => 1
+];
+
+$pdf->write2DBarcode(
+    $pdf_url,
+    'QRCODE,H',
+    80,
+    160,
+    50,
+    50,
+    $qr_style,
+    'N'
+);
+
+$pdf->lastPage();
+
+$pdf->Output($pdf_path, 'F');
+
+// ---------------- Print PDF End -------------------
+
+
+// ---------------- Sent Mail Start -----------------
 
 $mail = new PHPMailer(true);
 
@@ -133,124 +247,7 @@ try {
 // ---------------- Sent Mail End -------------------
 
 
-// ---------------- Print PDF Start -----------------
-
-$pdf = new TCPDF(
-    PDF_PAGE_ORIENTATION,
-    PDF_UNIT,
-    PDF_PAGE_FORMAT,
-    true,
-    'UTF-8',
-    false
-);
-
-$pdf->setPrintHeader(false);
-$pdf->setPrintFooter(false);
-
-$pdf->SetFont('cid0jp', '', 18);
-
-$pdf->AddPage();
-
-
-$html = <<<EOF
-
-<style>
-table {
-    border-collapse: collapse;
-}
-
-td {
-    padding: 8px;
-}
-
-.title {
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-</style>
-
-
-<table border="1" cellpadding="6">
-
-    <tr>
-        <td colspan="2" class="title">
-            奶龍選美大賽報名表
-        </td>
-    </tr>
-
-    <tr>
-        <td>姓名</td>
-        <td>$name</td>
-    </tr>
-
-    <tr>
-        <td>學號</td>
-        <td>$student_id</td>
-    </tr>
-
-    <tr>
-        <td>Email</td>
-        <td>
-            <a href="mailto:$email">$email</a>
-        </td>
-    </tr>
-
-    <tr>
-        <td>手機</td>
-        <td>
-            <a href="tel:$phone">$phone</a>
-        </td>
-    </tr>
-
-    <tr>
-        <td>年級</td>
-        <td>大{$grade}</td>
-    </tr>
-
-    <tr>
-        <td>報名組別</td>
-        <td>$category_text</td>
-    </tr>
-
-</table>
-
-EOF;
-
-
-$pdf->writeHTML($html);
-
-$base_url = 'http://140.138.155.243/~s1151538/HW2';
-
-$pdf_url = $base_url . '/pdf/' . $pdf_filename;
-
-$qr_style = [
-    'border' => 0,
-    'vpadding' => 'auto',
-    'hpadding' => 'auto',
-    'fgcolor' => [0, 0, 0],
-    'bgcolor' => false,
-    'module_width' => 1,
-    'module_height' => 1
-];
-
-$pdf->write2DBarcode(
-    $pdf_url,      // QR Code content
-    'QRCODE,H',    // QR Code error correction
-    80,            // X pos
-    160,           // Y pos
-    50,            // width
-    50,            // height
-    $qr_style,
-    'N'
-);
-
-$pdf->lastPage();
-
-$pdf->Output($pdf_path, 'F');
-
-
-// ---------------- Print PDF End -------------------
+// ---------------- Redirect ------------------------
 
 header("Location: success.php?student_id=" . urlencode($student_id));
 exit;
