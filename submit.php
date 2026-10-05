@@ -61,7 +61,14 @@ $pdf_path = __DIR__ . '/pdf/' . $pdf_filename;
 $sql = "INSERT INTO registrations
         (student_id, name, email, phone, grade, category, pdf_filename)
         VALUES
-        (:student_id, :name, :email, :phone, :grade, :category, :pdf_filename)";
+        (:student_id, :name, :email, :phone, :grade, :category, :pdf_filename)
+        ON DUPLICATE KEY UPDATE
+            name = VALUES(name),
+            email = VALUES(email),
+            phone = VALUES(phone),
+            grade = VALUES(grade),
+            category = VALUES(category),
+            pdf_filename = VALUES(pdf_filename)";
 
 $stmt = $pdo->prepare($sql);
 
