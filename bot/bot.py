@@ -42,7 +42,7 @@ async def check(interaction: discord.Interaction, query: str):
             host=DB_HOST, database=DB_NAME, user=DB_USER, password=DB_PASSWORD
         )
 
-        cursor = connection.cursor(dictionary=True)
+        cursor = connection.cursor(dictionary=True, buffered=True)
 
         cursor.execute(
             """
@@ -53,21 +53,24 @@ async def check(interaction: discord.Interaction, query: str):
             (query, query),
         )
 
-        row = cursor.fetchone()
-
-        if row is None:
-            await interaction.response.send_message(f'查無 {query} 的報名資料。')
-            return
-
-        registration = cast(dict[str, Any], row)
+        rows = cast(list[dict[str, Any]], cursor.fetchall())
 
         cursor.close()
         connection.close()
 
-        if registration is None:
+        if not rows:
             await interaction.response.send_message(f'查無 {query} 的報名資料。')
             return
 
+        if len(rows) > 1:
+            student_ids = '\n'.join(f'- {row["student_id"]}' for row in rows)
+
+            await interaction.response.send_message(
+                f'找到多筆姓名為「{query}」的報名資料：\n{student_ids}\n請改用學號查詢。'
+            )
+            return
+
+        registration = rows[0]
         await interaction.response.send_message(
             f'已完成報名\n'
             f'姓名：{registration["name"]}\n'
