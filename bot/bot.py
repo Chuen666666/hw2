@@ -33,10 +33,10 @@ async def on_ready():
 
 
 @bot.tree.command(name='check', description='查詢奶龍選美大賽報名狀態')
-@app_commands.describe(student_id='請輸入學號')
+@app_commands.describe(query='請輸入學號或名字')
 @app_commands.allowed_installs(guilds=True, users=True)
 @app_commands.allowed_contexts(guilds=True, dms=True, private_channels=True)
-async def check(interaction: discord.Interaction, student_id: str):
+async def check(interaction: discord.Interaction, query: str):
     try:
         connection = mysql.connector.connect(
             host=DB_HOST, database=DB_NAME, user=DB_USER, password=DB_PASSWORD
@@ -48,17 +48,15 @@ async def check(interaction: discord.Interaction, student_id: str):
             """
             SELECT name, student_id, grade, category
             FROM registrations
-            WHERE student_id = %s
+            WHERE student_id = %s OR name = %s
             """,
-            (student_id,),
+            (query, query),
         )
 
         row = cursor.fetchone()
 
         if row is None:
-            await interaction.response.send_message(
-                f'查無學號 {student_id} 的報名資料。'
-            )
+            await interaction.response.send_message(f'查無 {query} 的報名資料。')
             return
 
         registration = cast(dict[str, Any], row)
@@ -67,9 +65,7 @@ async def check(interaction: discord.Interaction, student_id: str):
         connection.close()
 
         if registration is None:
-            await interaction.response.send_message(
-                f'查無學號 {student_id} 的報名資料。'
-            )
+            await interaction.response.send_message(f'查無 {query} 的報名資料。')
             return
 
         await interaction.response.send_message(
