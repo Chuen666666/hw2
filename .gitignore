@@ -1,4 +1,5 @@
-config.php
-pdf
 .env
 .venv
+__pycache__/
+config.php
+pdf
