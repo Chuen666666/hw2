@@ -1,7 +1,9 @@
 <?php
 
-use PHPMailer\PHPMailer\PHPMailer;
+declare(strict_types=1);
+
 use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
 
 require_once('../TCPDF/tcpdf_import.php');
 require_once('../TCPDF/tcpdf_barcodes_2d.php');
@@ -21,7 +23,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 } catch (PDOException $e) {
-    die("Database connection failed: " . $e->getMessage());
+    die('Database connection failed: ' . $e->getMessage());
 }
 
 
@@ -61,7 +63,7 @@ $pdf_filename = 'registration_' . $student_id . '.pdf';
 
 $pdf_path = __DIR__ . '/pdf/' . $pdf_filename;
 
-$base_url = 'http://140.138.155.243/~s1151538/HW2';
+$base_url = 'https://hw2.chuen666666.com';
 
 $pdf_url = $base_url . '/pdf/' . $pdf_filename;
 
@@ -285,7 +287,7 @@ try {
 // ---------------- Redirect ------------------------
 
 header(
-    "Location: success.php?student_id=" .
+    'Location: success.php?student_id=' .
     urlencode($student_id)
 );
 
