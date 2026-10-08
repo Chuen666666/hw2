@@ -94,10 +94,10 @@ figure {
 }
 
 hr {
-  height: 0;
   -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
-  box-sizing: content-box
+  box-sizing: content-box;
+  height: 0
 }
 
 pre {
@@ -3393,15 +3393,15 @@ select[multiple].input-lg, textarea.input-lg {
   line-height: 1.42857143;
   white-space: nowrap;
   vertical-align: middle;
-  -ms-touch-action: manipulation;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
   cursor: pointer;
+  -ms-touch-action: manipulation;
   touch-action: manipulation;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
   user-select: none
 }
 
@@ -3424,11 +3424,11 @@ select[multiple].input-lg, textarea.input-lg {
 }
 
 .btn.disabled, .btn[disabled], fieldset[disabled] .btn {
-  filter: alpha(opacity=65);
-  cursor: not-allowed;
   -webkit-box-shadow: none;
   box-shadow: none;
-  opacity: .65
+  opacity: .65;
+  filter: alpha(opacity=65);
+  cursor: not-allowed
 }
 
 a.btn.disabled, fieldset[disabled] a.btn {
@@ -3790,16 +3790,16 @@ tbody.collapse.in {
 .collapsing {
   position: relative;
   height: 0;
-  overflow: hidden;
-  -webkit-transition-timing-function: ease;
-  -o-transition-timing-function: ease;
-  transition-timing-function: ease;
+  -webkit-transition-property: height, visibility;
+  -o-transition-property: height, visibility;
+  transition-property: height, visibility;
   -webkit-transition-duration: .35s;
   -o-transition-duration: .35s;
   transition-duration: .35s;
-  -webkit-transition-property: height, visibility;
-  -o-transition-property: height, visibility;
-  transition-property: height, visibility
+  -webkit-transition-timing-function: ease;
+  -o-transition-timing-function: ease;
+  transition-timing-function: ease;
+  overflow: hidden
 }
 
 .caret {
@@ -3835,9 +3835,9 @@ tbody.collapse.in {
   font-size: 14px;
   text-align: left;
   list-style: none;
-  background-color: #fff;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+  background-color: #fff;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, .15);
   border-radius: 4px;
@@ -5555,9 +5555,9 @@ a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
   margin-bottom: 20px;
   background-color: #f5f5f5;
   border-radius: 4px;
-  overflow: hidden;
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1)
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1);
+  overflow: hidden
 }
 
 .progress-bar {
@@ -6259,10 +6259,10 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 button.close {
-  -webkit-appearance: none;
   padding: 0;
   background: 0 0;
   border: 0;
+  -webkit-appearance: none;
   appearance: none;
   cursor: pointer
 }
@@ -6285,13 +6285,13 @@ button.close {
 }
 
 .modal.fade .modal-dialog {
-  -webkit-transition: -webkit-transform .3s ease-out;
-  -o-transition: -o-transform .3s ease-out;
-  transition: transform .3s ease-out;
   -webkit-transform: translate(0, -25%);
   -ms-transform: translate(0, -25%);
   -o-transform: translate(0, -25%);
-  transform: translate(0, -25%)
+  transform: translate(0, -25%);
+  -webkit-transition: -webkit-transform .3s ease-out;
+  -o-transition: -o-transform .3s ease-out;
+  transition: transform .3s ease-out
 }
 
 .modal.in .modal-dialog {
@@ -6314,9 +6314,9 @@ button.close {
 
 .modal-content {
   position: relative;
-  background-color: #fff;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+  background-color: #fff;
   border: 1px solid #999;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 6px;
@@ -6565,15 +6565,15 @@ button.close {
   word-spacing: normal;
   letter-spacing: normal;
   word-wrap: normal;
+  line-break: auto;
   white-space: normal;
-  background-color: #fff;
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
+  background-color: #fff;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 6px;
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
-  line-break: auto;
   box-shadow: 0 5px 10px rgba(0, 0, 0, .2)
 }
 
@@ -6716,11 +6716,11 @@ button.close {
 
 @media all and (transform-3d), (-webkit-transform-3d) {
   .carousel-inner > .item {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     -webkit-transition: -webkit-transform .6s ease-in-out;
     -o-transition: -o-transform .6s ease-in-out;
     transition: transform .6s ease-in-out;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
     -webkit-perspective: 1000px;
     perspective: 1000px
   }

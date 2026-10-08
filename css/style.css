@@ -270,14 +270,14 @@ footer {
     Intro section              
 -----------------------------------------*/
 #intro {
-  background: url('../images/intro-bg.jpg') 50% 0 repeat-y fixed;
-  -webkit-background-size: cover;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   color: #ffffff;
+  background: url('../images/intro-bg.jpg') 50% 0 repeat-y fixed;
   background-position: center center;
+  -webkit-background-size: cover;
   background-size: cover;
   -webkit-box-align: center;
   -webkit-align-items: center;
@@ -381,17 +381,30 @@ footer {
   padding-right: 12px;
 }
 
-#program img {
-  aspect-ratio: 1 / 1;
+#program .program-item {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 30px;
+}
+
+#program .program-image {
+  flex: 0 0 120px;
+}
+
+#program .program-image img {
+  display: block;
   width: 120px;
-  min-width: 120px;
-  max-width: 120px;
+  max-width: none;
   height: 120px;
-  min-height: 120px;
-  flex-shrink: 0;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
+}
+
+#program .program-content {
+  min-width: 0;
+  flex: 1;
 }
 
 .nav-tabs {
@@ -434,10 +447,10 @@ footer {
     Regsiter section              
 -----------------------------------------*/
 #register {
-  background: url('../images/register-bg.jpg') 50% 0 repeat-y fixed;
-  -webkit-background-size: cover;
   color: #ffffff;
+  background: url('../images/register-bg.jpg') 50% 0 repeat-y fixed;
   background-position: center center;
+  -webkit-background-size: cover;
   background-size: cover;
 }
 
@@ -718,9 +731,18 @@ footer {
     font-size: 13px;
   }
 
-  #program img {
-    margin-bottom: 0;
-    padding-bottom: 32px;
+  #program .program-item {
+    align-items: center;
+    gap: 20px;
+  }
+
+  #program .program-image {
+    flex: 0 0 90px;
+  }
+
+  #program .program-image img {
+    width: 90px;
+    height: 90px;
   }
 
   #sponsors img {
@@ -735,5 +757,26 @@ footer {
 @media (max-width: 760px) {
   #intro {
     height: 100vh;
+  }
+}
+
+@media (max-width: 480px) {
+  #program .program-item {
+    gap: 16px;
+  }
+
+  #program .program-image {
+    flex: 0 0 75px;
+  }
+
+  #program .program-image img {
+    width: 75px;
+    height: 75px;
+  }
+
+  #program h3 {
+    margin-top: 8px;
+    font-size: 22px;
+    line-height: 28px;
   }
 }
