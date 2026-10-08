@@ -410,6 +410,7 @@ footer {
 #program img {
   width: 120px;
   height: 120px;
+  max-width: none;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
