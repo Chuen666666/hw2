@@ -2,672 +2,677 @@
 <html lang="zh-Hant">
 
 <style>
-	#register .form-group label {
-		margin-right: 12px;
-	}
+    #register .form-group label {
+        margin-right: 12px;
+    }
 
-	#register .form-group {
-		margin-top: 18px;
-		margin-bottom: 20px;
-	}
+    #register .form-group {
+        margin-top: 18px;
+        margin-bottom: 20px;
+    }
 </style>
 
 <head>
-	<!--New Event
+    <!--New Event
 	http://www.templatemo.com/tm-486-new-event
 	-->
-	<title>奶龍選美大賽</title>
+    <title>奶龍選美大賽</title>
 
-	<meta name="description" content="奶龍選美大賽校園創作競賽，提供電繪、手繪、玩偶製作與 3D 列印四個組別。">
+    <meta name="description" content="奶龍選美大賽校園創作競賽，提供電繪、手繪、玩偶製作與 3D 列印四個組別。">
 
-	<meta name="author" content="奶龍選美大賽">
+    <meta name="author" content="奶龍選美大賽">
 
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/owl.theme.css">
-	<link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
 
-	<!-- Main css -->
-	<link rel="stylesheet" href="css/style.css">
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#f2545f">
 
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600" rel="stylesheet" type="text/css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600" rel="stylesheet" type="text/css">
 
 <body data-spy="scroll" data-offset="50" data-target=".navbar-collapse">
 
-	<!-- =========================
+    <!-- =========================
      PRE LOADER       
 	============================== -->
-	<div class="preloader">
+    <div class="preloader">
 
-		<div class="sk-rotating-plane"></div>
+        <div class="sk-rotating-plane"></div>
 
-	</div>
+    </div>
 
 
-	<!-- =========================
+    <!-- =========================
      NAVIGATION LINKS
 	============================== -->
-	<div class="navbar navbar-fixed-top custom-navbar" role="navigation">
-		<div class="container">
+    <div class="navbar navbar-fixed-top custom-navbar" role="navigation">
+        <div class="container">
 
-			<!-- navbar header -->
-			<div class="navbar-header">
-				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="icon icon-bar"></span>
-					<span class="icon icon-bar"></span>
-					<span class="icon icon-bar"></span>
-				</button>
+            <!-- navbar header -->
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                </button>
 
-				<a href="#intro" class="navbar-brand smoothScroll">奶龍選美大賽</a>
-			</div>
+                <a href="#intro" class="navbar-brand smoothScroll">奶龍選美大賽</a>
+            </div>
 
-			<div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse">
 
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#intro" class="smoothScroll">首頁</a></li>
-					<li><a href="#overview" class="smoothScroll">活動介紹</a></li>
-					<li><a href="#categories" class="smoothScroll">比賽組別</a></li>
-					<li><a href="#program" class="smoothScroll">活動流程</a></li>
-					<li><a href="#notice" class="smoothScroll">報名須知</a></li>
-					<li><a href="#register" class="smoothScroll">立即報名</a></li>
-					<li>
-						<a href="https://discord.com/oauth2/authorize?client_id=1556568962773418014" target="_blank"
-							rel="noopener noreferrer">
-							Discord Bot
-						</a>
-					</li>
-				</ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#intro" class="smoothScroll">首頁</a></li>
+                    <li><a href="#overview" class="smoothScroll">活動介紹</a></li>
+                    <li><a href="#categories" class="smoothScroll">比賽組別</a></li>
+                    <li><a href="#program" class="smoothScroll">活動流程</a></li>
+                    <li><a href="#notice" class="smoothScroll">報名須知</a></li>
+                    <li><a href="#register" class="smoothScroll">立即報名</a></li>
+                    <li>
+                        <a href="https://discord.com/oauth2/authorize?client_id=1556568962773418014" target="_blank"
+                            rel="noopener noreferrer">
+                            Discord Bot
+                        </a>
+                    </li>
+                </ul>
 
-			</div>
+            </div>
 
-		</div>
-	</div>
+        </div>
+    </div>
 
 
-	<!-- =========================
+    <!-- =========================
     INTRO SECTION
 	============================== -->
-	<section id="intro" class="parallax-section">
-		<div class="container">
-			<div class="row">
+    <section id="intro" class="parallax-section">
+        <div class="container">
+            <div class="row">
 
-				<div class="col-md-12 col-sm-12">
-					<h3 class="wow bounceIn" data-wow-delay="0.9s">輕鬆繃住</h3>
+                <div class="col-md-12 col-sm-12">
+                    <h3 class="wow bounceIn" data-wow-delay="0.9s">輕鬆繃住</h3>
 
-					<h1 class="wow fadeInUp" data-wow-delay="1.6s">
-						奶龍選美大賽
-					</h1>
+                    <h1 class="wow fadeInUp" data-wow-delay="1.6s">
+                        奶龍選美大賽
+                    </h1>
 
-					<p class="wow fadeInUp" data-wow-delay="2.0s" style="color: #f5f5f5; font-weight: 500;">
-						本次競賽提供了電繪、手繪、玩偶製作、3D 列印四個組別，<br>
-						只要你有心，就可一次參加多組，歡迎帶上你的作品，<br>
-						一起角逐本屆最具魅力奶龍！
-					</p>
+                    <p class="wow fadeInUp" data-wow-delay="2.0s" style="color: #f5f5f5; font-weight: 500;">
+                        本次競賽提供了電繪、手繪、玩偶製作、3D 列印四個組別，<br>
+                        只要你有心，就可一次參加多組，歡迎帶上你的作品，<br>
+                        一起角逐本屆最具魅力奶龍！
+                    </p>
 
-					<a href="#overview" class="btn btn-lg btn-default smoothScroll wow fadeInUp hidden-xs"
-						data-wow-delay="2.3s">
-						了解更多
-					</a>
+                    <a href="#overview" class="btn btn-lg btn-default smoothScroll wow fadeInUp hidden-xs"
+                        data-wow-delay="2.3s">
+                        了解更多
+                    </a>
 
-					<a href="#register" class="btn btn-lg btn-danger smoothScroll wow fadeInUp" data-wow-delay="2.3s">
-						立即報名
-					</a>
-				</div>
+                    <a href="#register" class="btn btn-lg btn-danger smoothScroll wow fadeInUp" data-wow-delay="2.3s">
+                        立即報名
+                    </a>
+                </div>
 
-			</div>
-		</div>
-	</section>
+            </div>
+        </div>
+    </section>
 
 
-	<!-- =========================
+    <!-- =========================
     OVERVIEW SECTION
 	============================== -->
-	<section id="overview" class="parallax-section">
-		<div class="container">
-			<div class="row">
+    <section id="overview" class="parallax-section">
+        <div class="container">
+            <div class="row">
 
-				<div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.6s">
-					<h3>關於奶龍選美大賽</h3>
+                <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.6s">
+                    <h3>關於奶龍選美大賽</h3>
 
-					<p>
-						奶龍選美大賽是一場以創意、造型與個人風格為核心的校園創作競賽。
-						參賽者可以透過電繪、手繪、玩偶或 3D 列印等不同形式，
-						打造屬於自己的奶龍作品。
-					</p>
+                    <p>
+                        奶龍選美大賽是一場以創意、造型與個人風格為核心的校園創作競賽。
+                        參賽者可以透過電繪、手繪、玩偶或 3D 列印等不同形式，
+                        打造屬於自己的奶龍作品。
+                    </p>
 
-					<p>
-						無論你是第一次創作，還是已經累積不少作品，都可以參加本次活動。
-						比賽希望讓同學自由發揮想像力，展現不同媒材的創作特色，
-						並一起選出最受歡迎的奶龍。
-					</p>
-				</div>
+                    <p>
+                        無論你是第一次創作，還是已經累積不少作品，都可以參加本次活動。
+                        比賽希望讓同學自由發揮想像力，展現不同媒材的創作特色，
+                        並一起選出最受歡迎的奶龍。
+                    </p>
+                </div>
 
-				<div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.9s">
-					<img src="images/overview-img.jpg" class="img-responsive" alt="奶龍選美大賽活動介紹">
-				</div>
+                <div class="wow fadeInUp col-md-6 col-sm-6" data-wow-delay="0.9s">
+                    <img src="images/overview-img.jpg" class="img-responsive" alt="奶龍選美大賽活動介紹">
+                </div>
 
-			</div>
-		</div>
-	</section>
+            </div>
+        </div>
+    </section>
 
 
-	<!-- =========================
+    <!-- =========================
     CATEGORIES SECTION
 	============================== -->
-	<section id="categories" class="parallax-section">
-		<div class="container">
-			<div class="row">
+    <section id="categories" class="parallax-section">
+        <div class="container">
+            <div class="row">
 
-				<div class="col-md-12 col-sm-12 wow bounceIn">
-					<div class="section-title">
-						<h2>比賽組別</h2>
-						<p>選擇你最擅長的創作方式，也可以一次參加多個組別！</p>
-					</div>
-				</div>
+                <div class="col-md-12 col-sm-12 wow bounceIn">
+                    <div class="section-title">
+                        <h2>比賽組別</h2>
+                        <p>選擇你最擅長的創作方式，也可以一次參加多個組別！</p>
+                    </div>
+                </div>
 
-				<div id="owl-speakers" class="owl-carousel">
+                <div id="owl-speakers" class="owl-carousel">
 
-					<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.3s">
-						<div class="speakers-wrapper">
-							<img src="images/speakers-img1.jpg" class="img-responsive" alt="電繪組">
-							<div class="speakers-thumb">
-								<h3>電繪組</h3>
-								<h6>使用數位繪圖工具創作你的奶龍，畫風、構圖與表現方式不限。</h6>
-							</div>
-						</div>
-					</div>
+                    <div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.3s">
+                        <div class="speakers-wrapper">
+                            <img src="images/speakers-img1.jpg" class="img-responsive" alt="電繪組">
+                            <div class="speakers-thumb">
+                                <h3>電繪組</h3>
+                                <h6>使用數位繪圖工具創作你的奶龍，畫風、構圖與表現方式不限。</h6>
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
-						<div class="speakers-wrapper">
-							<img src="images/speakers-img2.jpg" class="img-responsive" alt="手繪組">
-							<div class="speakers-thumb">
-								<h3>手繪組</h3>
-								<h6>使用鉛筆、色鉛筆、麥克筆、水彩等實體媒材完成奶龍作品。</h6>
-							</div>
-						</div>
-					</div>
+                    <div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.6s">
+                        <div class="speakers-wrapper">
+                            <img src="images/speakers-img2.jpg" class="img-responsive" alt="手繪組">
+                            <div class="speakers-thumb">
+                                <h3>手繪組</h3>
+                                <h6>使用鉛筆、色鉛筆、麥克筆、水彩等實體媒材完成奶龍作品。</h6>
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.9s">
-						<div class="speakers-wrapper">
-							<img src="images/speakers-img3.jpg" class="img-responsive" alt="玩偶組">
-							<div class="speakers-thumb">
-								<h3>玩偶組</h3>
-								<h6>以布料、黏土、毛線或其他材料，製作實體奶龍玩偶。</h6>
-							</div>
-						</div>
-					</div>
+                    <div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="0.9s">
+                        <div class="speakers-wrapper">
+                            <img src="images/speakers-img3.jpg" class="img-responsive" alt="玩偶組">
+                            <div class="speakers-thumb">
+                                <h3>玩偶組</h3>
+                                <h6>以布料、黏土、毛線或其他材料，製作實體奶龍玩偶。</h6>
+                            </div>
+                        </div>
+                    </div>
 
-					<div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="1.2s">
-						<div class="speakers-wrapper">
-							<img src="images/speakers-img4.jpg" class="img-responsive" alt="3D 列印組">
-							<div class="speakers-thumb">
-								<h3>3D 列印組</h3>
-								<h6>自行建模並以 3D 列印方式製作奶龍作品，展現立體造型與創意。</h6>
-							</div>
-						</div>
-					</div>
+                    <div class="item wow fadeInUp col-md-3 col-sm-3" data-wow-delay="1.2s">
+                        <div class="speakers-wrapper">
+                            <img src="images/speakers-img4.jpg" class="img-responsive" alt="3D 列印組">
+                            <div class="speakers-thumb">
+                                <h3>3D 列印組</h3>
+                                <h6>自行建模並以 3D 列印方式製作奶龍作品，展現立體造型與創意。</h6>
+                            </div>
+                        </div>
+                    </div>
 
-				</div>
+                </div>
 
-			</div>
-		</div>
-	</section>
+            </div>
+        </div>
+    </section>
 
 
-	<!-- =========================
+    <!-- =========================
     PROGRAM SECTION
 	============================== -->
-	<section id="program" class="parallax-section">
-		<div class="container">
-			<div class="row">
+    <section id="program" class="parallax-section">
+        <div class="container">
+            <div class="row">
 
-				<div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="0.6s">
-					<div class="section-title">
-						<h2>活動流程</h2>
-						<p>從報名到結果公布，一起完成你的奶龍參賽之旅！</p>
-					</div>
-				</div>
+                <div class="wow fadeInUp col-md-12 col-sm-12" data-wow-delay="0.6s">
+                    <div class="section-title">
+                        <h2>活動流程</h2>
+                        <p>從報名到結果公布，一起完成你的奶龍參賽之旅！</p>
+                    </div>
+                </div>
 
-				<div class="wow fadeInUp col-md-10 col-sm-10" data-wow-delay="0.9s">
+                <div class="wow fadeInUp col-md-10 col-sm-10" data-wow-delay="0.9s">
 
-					<!-- 1. 線上報名 -->
-					<div class="col-md-2 col-sm-2">
-						<img src="images/program-img1.jpg" class="img-responsive" alt="線上報名">
-					</div>
+                    <!-- 1. 線上報名 -->
+                    <div class="col-md-2 col-sm-2">
+                        <img src="images/program-img1.jpg" class="img-responsive" alt="線上報名">
+                    </div>
 
-					<div class="col-md-10 col-sm-10">
-						<h6>
-							<span>
-								<i class="fa fa-calendar"></i>
-								報名截止：2026/11/2
-							</span>
-						</h6>
+                    <div class="col-md-10 col-sm-10">
+                        <h6>
+                            <span>
+                                <i class="fa fa-calendar"></i>
+                                報名截止：2026/11/2
+                            </span>
+                        </h6>
 
-						<h3>線上報名</h3>
+                        <h3>線上報名</h3>
 
-						<p>
-							填寫基本資料並選擇想參加的組別，
-							每位參賽者可同時報名多個組別。
-						</p>
-					</div>
+                        <p>
+                            填寫基本資料並選擇想參加的組別，
+                            每位參賽者可同時報名多個組別。
+                        </p>
+                    </div>
 
-					<div class="program-divider col-md-12 col-sm-12"></div>
-
-
-					<!-- 2. 作品準備 -->
-					<div class="col-md-2 col-sm-2">
-						<img src="images/program-img2.jpg" class="img-responsive" alt="作品準備">
-					</div>
-
-					<div class="col-md-10 col-sm-10">
-						<h3>作品準備</h3>
-
-						<p>
-							依照所報名的組別完成奶龍作品，
-							盡情發揮你的創意、造型與個人風格。
-						</p>
-					</div>
-
-					<div class="program-divider col-md-12 col-sm-12"></div>
+                    <div class="program-divider col-md-12 col-sm-12"></div>
 
 
-					<!-- 3. 作品繳交 -->
-					<div class="col-md-2 col-sm-2">
-						<img src="images/program-img3.jpg" class="img-responsive" alt="作品繳交">
-					</div>
+                    <!-- 2. 作品準備 -->
+                    <div class="col-md-2 col-sm-2">
+                        <img src="images/program-img2.jpg" class="img-responsive" alt="作品準備">
+                    </div>
 
-					<div class="col-md-10 col-sm-10">
-						<h6>
-							<span>
-								<i class="fa fa-calendar"></i>
-								繳交截止：2027/1/4
-							</span>
-						</h6>
+                    <div class="col-md-10 col-sm-10">
+                        <h3>作品準備</h3>
 
-						<h3>作品繳交</h3>
+                        <p>
+                            依照所報名的組別完成奶龍作品，
+                            盡情發揮你的創意、造型與個人風格。
+                        </p>
+                    </div>
 
-						<p>
-							請於指定期限前完成作品繳交，
-							每個組別限繳交一件作品。
-						</p>
-					</div>
-
-					<div class="program-divider col-md-12 col-sm-12"></div>
+                    <div class="program-divider col-md-12 col-sm-12"></div>
 
 
-					<!-- 4. 評審評選 -->
-					<div class="col-md-2 col-sm-2">
-						<img src="images/program-img4.jpg" class="img-responsive" alt="評審評選">
-					</div>
+                    <!-- 3. 作品繳交 -->
+                    <div class="col-md-2 col-sm-2">
+                        <img src="images/program-img3.jpg" class="img-responsive" alt="作品繳交">
+                    </div>
 
-					<div class="col-md-10 col-sm-10">
-						<h3>評審評選</h3>
+                    <div class="col-md-10 col-sm-10">
+                        <h6>
+                            <span>
+                                <i class="fa fa-calendar"></i>
+                                繳交截止：2027/1/4
+                            </span>
+                        </h6>
 
-						<p>
-							評審將依照作品的創意、完成度與整體表現進行評選，
-							選出各組優秀作品。
-						</p>
-					</div>
+                        <h3>作品繳交</h3>
 
-					<div class="program-divider col-md-12 col-sm-12"></div>
+                        <p>
+                            請於指定期限前完成作品繳交，
+                            每個組別限繳交一件作品。
+                        </p>
+                    </div>
 
-
-					<!-- 5. 人氣投票 -->
-					<div class="col-md-2 col-sm-2">
-						<img src="images/program-img5.jpg" class="img-responsive" alt="人氣投票">
-					</div>
-
-					<div class="col-md-10 col-sm-10">
-						<h6>
-							<span>
-								<i class="fa fa-calendar"></i>
-								2027/1/4 ～ 2027/1/8
-							</span>
-						</h6>
-
-						<h3>人氣投票</h3>
-
-						<p>
-							所有參賽作品開放公開投票，
-							由大家共同選出本屆「最佳人氣獎」。
-						</p>
-					</div>
-
-					<div class="program-divider col-md-12 col-sm-12"></div>
+                    <div class="program-divider col-md-12 col-sm-12"></div>
 
 
-					<!-- 6. 結果公布 -->
-					<div class="col-md-2 col-sm-2">
-						<img src="images/program-img6.jpg" class="img-responsive" alt="結果公布">
-					</div>
+                    <!-- 4. 評審評選 -->
+                    <div class="col-md-2 col-sm-2">
+                        <img src="images/program-img4.jpg" class="img-responsive" alt="評審評選">
+                    </div>
 
-					<div class="col-md-10 col-sm-10">
-						<h6>
-							<span>
-								<i class="fa fa-calendar"></i>
-								2027/1/11
-							</span>
-						</h6>
+                    <div class="col-md-10 col-sm-10">
+                        <h3>評審評選</h3>
 
-						<h3>結果公布</h3>
+                        <p>
+                            評審將依照作品的創意、完成度與整體表現進行評選，
+                            選出各組優秀作品。
+                        </p>
+                    </div>
 
-						<p>
-							公布各組得獎作品、最佳人氣獎，
-							以及本屆最具魅力奶龍！
-						</p>
-					</div>
-
-				</div>
-
-			</div>
-		</div>
-	</section>
+                    <div class="program-divider col-md-12 col-sm-12"></div>
 
 
-	<!-- =========================
+                    <!-- 5. 人氣投票 -->
+                    <div class="col-md-2 col-sm-2">
+                        <img src="images/program-img5.jpg" class="img-responsive" alt="人氣投票">
+                    </div>
+
+                    <div class="col-md-10 col-sm-10">
+                        <h6>
+                            <span>
+                                <i class="fa fa-calendar"></i>
+                                2027/1/4 ～ 2027/1/8
+                            </span>
+                        </h6>
+
+                        <h3>人氣投票</h3>
+
+                        <p>
+                            所有參賽作品開放公開投票，
+                            由大家共同選出本屆「最佳人氣獎」。
+                        </p>
+                    </div>
+
+                    <div class="program-divider col-md-12 col-sm-12"></div>
+
+
+                    <!-- 6. 結果公布 -->
+                    <div class="col-md-2 col-sm-2">
+                        <img src="images/program-img6.jpg" class="img-responsive" alt="結果公布">
+                    </div>
+
+                    <div class="col-md-10 col-sm-10">
+                        <h6>
+                            <span>
+                                <i class="fa fa-calendar"></i>
+                                2027/1/11
+                            </span>
+                        </h6>
+
+                        <h3>結果公布</h3>
+
+                        <p>
+                            公布各組得獎作品、最佳人氣獎，
+                            以及本屆最具魅力奶龍！
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
 	NOTICE SECTION
 	============================== -->
-	<section id="notice" class="parallax-section">
-		<div class="container">
-			<div class="row">
+    <section id="notice" class="parallax-section">
+        <div class="container">
+            <div class="row">
 
-				<div class="wow bounceIn col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 text-center">
-					<div class="section-title">
-						<h2>報名須知</h2>
-						<p>報名前請先確認以下活動規則與重要日期。</p>
-					</div>
-				</div>
+                <div class="wow bounceIn col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10 text-center">
+                    <div class="section-title">
+                        <h2>報名須知</h2>
+                        <p>報名前請先確認以下活動規則與重要日期。</p>
+                    </div>
+                </div>
 
-				<div class="wow fadeInUp col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10" data-wow-delay="0.9s">
+                <div class="wow fadeInUp col-md-offset-1 col-md-10 col-sm-offset-1 col-sm-10" data-wow-delay="0.9s">
 
-					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
-						<!-- 報名規則 -->
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="headingOne">
-								<h4 class="panel-title">
-									<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
-										aria-expanded="true" aria-controls="collapseOne">
-										報名規則
-									</a>
-								</h4>
-							</div>
+                        <!-- 報名規則 -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        報名規則
+                                    </a>
+                                </h4>
+                            </div>
 
-							<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
-								aria-labelledby="headingOne">
+                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                aria-labelledby="headingOne">
 
-								<div class="panel-body">
-									<p>每位參賽者可同時報名多個組別。</p>
-									<p>每個組別限繳交一件作品。</p>
-									<p>所有作品須由參賽者本人創作。</p>
-								</div>
-							</div>
-						</div>
-
-
-						<!-- 作品規範 -->
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="headingTwo">
-								<h4 class="panel-title">
-									<a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-										href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-										作品規範
-									</a>
-								</h4>
-							</div>
-
-							<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
-								aria-labelledby="headingTwo">
-
-								<div class="panel-body">
-									<p>
-										作品不得抄襲、冒用他人作品或直接重製既有作品。
-									</p>
-									<p>
-										參賽者可依電繪、手繪、玩偶製作或 3D 列印等方式進行創作。
-									</p>
-								</div>
-							</div>
-						</div>
+                                <div class="panel-body">
+                                    <p>每位參賽者可同時報名多個組別。</p>
+                                    <p>每個組別限繳交一件作品。</p>
+                                    <p>所有作品須由參賽者本人創作。</p>
+                                </div>
+                            </div>
+                        </div>
 
 
-						<!-- 重要日期 -->
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="headingThree">
-								<h4 class="panel-title">
-									<a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-										href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-										重要日期
-									</a>
-								</h4>
-							</div>
+                        <!-- 作品規範 -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingTwo">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                        href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        作品規範
+                                    </a>
+                                </h4>
+                            </div>
 
-							<div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
-								aria-labelledby="headingThree">
+                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingTwo">
 
-								<div class="panel-body">
-									<p>報名截止：2026/11/2</p>
-									<p>作品繳交截止：2027/1/4</p>
-									<p>人氣投票：2027/1/4 ～ 2027/1/8</p>
-									<p>結果公布：2027/1/11</p>
-								</div>
-							</div>
-						</div>
-
-
-						<!-- 評選方式 -->
-						<div class="panel panel-default">
-							<div class="panel-heading" role="tab" id="headingFour">
-								<h4 class="panel-title">
-									<a class="collapsed" data-toggle="collapse" data-parent="#accordion"
-										href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-										評選方式
-									</a>
-								</h4>
-							</div>
-
-							<div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
-								aria-labelledby="headingFour">
-
-								<div class="panel-body">
-									<p>
-										評審將依作品的創意、完成度與整體表現進行評選。
-									</p>
-									<p>
-										最佳人氣獎將透過公開投票方式產生。
-									</p>
-									<p>
-										主辦單位保留活動內容及規則調整之權利。
-									</p>
-								</div>
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-		</div>
-	</section>
+                                <div class="panel-body">
+                                    <p>
+                                        作品不得抄襲、冒用他人作品或直接重製既有作品。
+                                    </p>
+                                    <p>
+                                        參賽者可依電繪、手繪、玩偶製作或 3D 列印等方式進行創作。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
 
-	<!-- =========================
+                        <!-- 重要日期 -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                        href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        重要日期
+                                    </a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingThree">
+
+                                <div class="panel-body">
+                                    <p>報名截止：2026/11/2</p>
+                                    <p>作品繳交截止：2027/1/4</p>
+                                    <p>人氣投票：2027/1/4 ～ 2027/1/8</p>
+                                    <p>結果公布：2027/1/11</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- 評選方式 -->
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="headingFour">
+                                <h4 class="panel-title">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                        href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        評選方式
+                                    </a>
+                                </h4>
+                            </div>
+
+                            <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                                aria-labelledby="headingFour">
+
+                                <div class="panel-body">
+                                    <p>
+                                        評審將依作品的創意、完成度與整體表現進行評選。
+                                    </p>
+                                    <p>
+                                        最佳人氣獎將透過公開投票方式產生。
+                                    </p>
+                                    <p>
+                                        主辦單位保留活動內容及規則調整之權利。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
    REGISTER SECTION
 	============================== -->
-	<section id="register" class="parallax-section">
-		<div class="container">
-			<div class="row">
+    <section id="register" class="parallax-section">
+        <div class="container">
+            <div class="row">
 
-				<div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="0.6s">
-					<h2>立即報名</h2>
+                <div class="wow fadeInUp col-md-7 col-sm-7" data-wow-delay="0.6s">
+                    <h2>立即報名</h2>
 
-					<h3>
-						準備好讓你的奶龍登上舞台了嗎？
-					</h3>
+                    <h3>
+                        準備好讓你的奶龍登上舞台了嗎？
+                    </h3>
 
-					<p>
-						填寫以下報名資料並選擇參賽組別，即可完成奶龍選美大賽報名。
-						每位參賽者可以同時參加多個組別。
-					</p>
+                    <p>
+                        填寫以下報名資料並選擇參賽組別，即可完成奶龍選美大賽報名。
+                        每位參賽者可以同時參加多個組別。
+                    </p>
 
-					<p>
-						完成報名後，系統將產生你的報名確認 PDF，
-						並寄送確認信至你的元智大學信箱。
-					</p>
-				</div>
-
-
-				<div class="wow fadeInUp col-md-5 col-sm-5" data-wow-delay="1s">
-
-					<form action="submit.php" method="post" onsubmit="return validateForm();">
-
-						<!-- 姓名 -->
-						<input name="name" type="text" class="form-control" id="name" placeholder="姓名" required>
+                    <p>
+                        完成報名後，系統將產生你的報名確認 PDF，
+                        並寄送確認信至你的元智大學信箱。
+                    </p>
+                </div>
 
 
-						<!-- 學號 -->
-						<input name="student_id" type="text" class="form-control" id="student_id"
-							placeholder="學號，例如：1151538" pattern="(?:8|9|10|11)\d{5}" title="請輸入正確的元智大學學號" required>
+                <div class="wow fadeInUp col-md-5 col-sm-5" data-wow-delay="1s">
+
+                    <form action="submit.php" method="post" onsubmit="return validateForm();">
+
+                        <!-- 姓名 -->
+                        <input name="name" type="text" class="form-control" id="name" placeholder="姓名" required>
 
 
-						<!-- 學校 Email -->
-						<input name="email" type="email" class="form-control" id="email"
-							placeholder="學校信箱，例如：s1151538@mail.yzu.edu.tw"
-							pattern="s(?:8|9|10|11)\d{5}@mail\.yzu\.edu\.tw" title="請輸入元智大學學生信箱" required>
+                        <!-- 學號 -->
+                        <input name="student_id" type="text" class="form-control" id="student_id"
+                            placeholder="學號，例如：1151538" pattern="(?:8|9|10|11)\d{5}" title="請輸入正確的元智大學學號" required>
 
 
-						<!-- 手機 -->
-						<input name="phone" type="tel" class="form-control" id="phone" placeholder="手機號碼，例如：0912345678"
-							pattern="09\d{8}" title="請輸入 10 碼手機號碼，例如 0912345678" required>
+                        <!-- 學校 Email -->
+                        <input name="email" type="email" class="form-control" id="email"
+                            placeholder="學校信箱，例如：s1151538@mail.yzu.edu.tw"
+                            pattern="s(?:8|9|10|11)\d{5}@mail\.yzu\.edu\.tw" title="請輸入元智大學學生信箱" required>
 
 
-						<!-- 年級 -->
-						<div class="form-group">
-							<label>年級</label><br>
-
-							<label>
-								<input type="radio" name="grade" value="1" required>
-								大一
-							</label>
-
-							<label>
-								<input type="radio" name="grade" value="2">
-								大二
-							</label>
-
-							<label>
-								<input type="radio" name="grade" value="3">
-								大三
-							</label>
-
-							<label>
-								<input type="radio" name="grade" value="4">
-								大四
-							</label>
-
-							<label>
-								<input type="radio" name="grade" value="5">
-								大五
-							</label>
-
-							<label>
-								<input type="radio" name="grade" value="6">
-								大六
-							</label>
-
-							<label>
-								<input type="radio" name="grade" value="7">
-								大七
-							</label>
-						</div>
+                        <!-- 手機 -->
+                        <input name="phone" type="tel" class="form-control" id="phone" placeholder="手機號碼，例如：0912345678"
+                            pattern="09\d{8}" title="請輸入 10 碼手機號碼，例如 0912345678" required>
 
 
-						<!-- 報名組別 -->
-						<div class="form-group">
-							<label>報名組別（可複選）</label><br>
+                        <!-- 年級 -->
+                        <div class="form-group">
+                            <label>年級</label><br>
 
-							<label>
-								<input type="checkbox" name="category[]" value="digital">
-								電繪組
-							</label>
+                            <label>
+                                <input type="radio" name="grade" value="1" required>
+                                大一
+                            </label>
 
-							<label>
-								<input type="checkbox" name="category[]" value="hand">
-								手繪組
-							</label>
+                            <label>
+                                <input type="radio" name="grade" value="2">
+                                大二
+                            </label>
 
-							<label>
-								<input type="checkbox" name="category[]" value="doll">
-								玩偶組
-							</label>
+                            <label>
+                                <input type="radio" name="grade" value="3">
+                                大三
+                            </label>
 
-							<label>
-								<input type="checkbox" name="category[]" value="3dprint">
-								3D 列印組
-							</label>
-						</div>
+                            <label>
+                                <input type="radio" name="grade" value="4">
+                                大四
+                            </label>
+
+                            <label>
+                                <input type="radio" name="grade" value="5">
+                                大五
+                            </label>
+
+                            <label>
+                                <input type="radio" name="grade" value="6">
+                                大六
+                            </label>
+
+                            <label>
+                                <input type="radio" name="grade" value="7">
+                                大七
+                            </label>
+                        </div>
 
 
-						<div class="col-md-offset-6 col-md-6 col-sm-offset-1 col-sm-10">
-							<input name="submit" type="submit" class="form-control" id="submit" value="送出報名">
-						</div>
+                        <!-- 報名組別 -->
+                        <div class="form-group">
+                            <label>報名組別（可複選）</label><br>
 
-					</form>
+                            <label>
+                                <input type="checkbox" name="category[]" value="digital">
+                                電繪組
+                            </label>
 
-				</div>
+                            <label>
+                                <input type="checkbox" name="category[]" value="hand">
+                                手繪組
+                            </label>
 
-				<div class="col-md-1"></div>
+                            <label>
+                                <input type="checkbox" name="category[]" value="doll">
+                                玩偶組
+                            </label>
 
-			</div>
-		</div>
-	</section>
+                            <label>
+                                <input type="checkbox" name="category[]" value="3dprint">
+                                3D 列印組
+                            </label>
+                        </div>
 
 
-	<!-- =========================
+                        <div class="col-md-offset-6 col-md-6 col-sm-offset-1 col-sm-10">
+                            <input name="submit" type="submit" class="form-control" id="submit" value="送出報名">
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="col-md-1"></div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- =========================
     FOOTER SECTION
 	============================== -->
-	<footer>
-		<div class="container">
-			<div class="row">
+    <footer>
+        <div class="container">
+            <div class="row">
 
-				<div class="col-md-12 col-sm-12">
-					<p class="wow fadeInUp" data-wow-delay="0.6s">
-						Copyright &copy; 2026 奶龍選美大賽
-						|
-						Design based on
-						<a rel="nofollow" href="http://www.templatemo.com/page/1" target="_blank">
-							TemplateMo
-						</a>
-					</p>
-				</div>
+                <div class="col-md-12 col-sm-12">
+                    <p class="wow fadeInUp" data-wow-delay="0.6s">
+                        Copyright &copy; 2026 奶龍選美大賽
+                        |
+                        Design based on
+                        <a rel="nofollow" href="http://www.templatemo.com/page/1" target="_blank">
+                            TemplateMo
+                        </a>
+                    </p>
+                </div>
 
-			</div>
-		</div>
-	</footer>
-
-
-	<!-- Back top -->
-	<a href="#back-top" class="go-top"><i class="fa fa-angle-up"></i></a>
+            </div>
+        </div>
+    </footer>
 
 
-	<!-- =========================
+    <!-- Back top -->
+    <a href="#back-top" class="go-top"><i class="fa fa-angle-up"></i></a>
+
+
+    <!-- =========================
      SCRIPTS   
 	============================== -->
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.parallax.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/smoothscroll.js"></script>
-	<script src="js/wow.min.js"></script>
-	<script src="js/custom.js"></script>
-	<script src="js/register.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.parallax.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/smoothscroll.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/pwa.js"></script>
 
 </body>
 
