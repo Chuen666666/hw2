@@ -68,11 +68,10 @@ $pdf_url = $base_url . '/pdf/' . $pdf_filename;
 
 // ---------------- Save To Database ----------------
 
-$sql = "INSERT INTO registrations
+$sql = "INSERT INTO {$registration_table}
         (student_id, name, email, phone, grade, category, pdf_filename)
         VALUES
         (:student_id, :name, :email, :phone, :grade, :category, :pdf_filename)
-
         ON DUPLICATE KEY UPDATE
             name = VALUES(name),
             email = VALUES(email),

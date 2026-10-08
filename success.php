@@ -22,7 +22,7 @@ try {
 }
 
 $sql = "SELECT *
-        FROM registrations
+        FROM {$registration_table}
         WHERE student_id = :student_id";
 
 $stmt = $pdo->prepare($sql);
