@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 $host = 'localhost';
 $dbname = 'hw2';
 $username = '你的資料庫帳號';
