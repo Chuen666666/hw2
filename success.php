@@ -27,9 +27,7 @@ $sql = "SELECT *
 
 $stmt = $pdo->prepare($sql);
 
-$stmt->execute([
-    ':student_id' => $student_id
-]);
+$stmt->execute([':student_id' => $student_id]);
 
 $registration = $stmt->fetch(PDO::FETCH_ASSOC);
 

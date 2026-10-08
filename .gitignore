@@ -1,5 +1,28 @@
-.env
-.venv
-__pycache__/
-pdf/registration_*.pdf
+# PHP / private config
 config.php
+
+# Discord Bot secrets / virtual environment
+bot/.env
+bot/.venv/
+bot/__pycache__/
+*.pyc
+
+# Generated PDFs
+pdf/registration_*.pdf
+
+# Composer dependencies
+vendor/
+
+# PHP-CS-Fixer cache
+.php-cs-fixer.cache
+
+# Bot runtime log
+bot/bot.log
+bot.log
+
+# VS Code local settings
+.vscode/settings.json
+
+# OS junk
+.DS_Store
+Thumbs.db
