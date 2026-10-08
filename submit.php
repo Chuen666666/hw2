@@ -195,34 +195,11 @@ $pdf->writeHTML($html);
 
 // ---------------- QR Code In PDF ----------------
 
-$qr_style = [
-    'border' => 0,
-    'vpadding' => 'auto',
-    'hpadding' => 'auto',
-    'fgcolor' => [0, 0, 0],
-    'bgcolor' => false,
-    'module_width' => 1,
-    'module_height' => 1
-];
-
-$pdf->write2DBarcode(
-    $pdf_url,
-    'QRCODE,H',
-    80,
-    160,
-    50,
-    50,
-    $qr_style,
-    'N'
-);
-
+$pdf->Image('@' . $qr_png, 80, 160, 50, 50, 'PNG');
 
 $pdf->lastPage();
 
-$pdf->Output(
-    $pdf_path,
-    'F'
-);
+$pdf->Output($pdf_path, 'F');
 
 // ---------------- Print PDF End -------------------
 
@@ -250,17 +227,11 @@ try {
 
 
     // FROM
-    $mail->setFrom(
-        $smtp_username,
-        '奶龍選美大賽'
-    );
+    $mail->setFrom($smtp_username, '奶龍選美大賽');
 
 
     // TO
-    $mail->addAddress(
-        $email,
-        $name
-    );
+    $mail->addAddress($email, $name);
 
 
     // HTML Email
@@ -305,11 +276,7 @@ try {
     $mail->send();
 
 } catch (Exception $e) {
-
-    die(
-        '寄信失敗：' .
-        $mail->ErrorInfo
-    );
+    die('寄信失敗：' . $mail->ErrorInfo);
 }
 
 // ---------------- Sent Mail End -------------------
