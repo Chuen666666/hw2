@@ -13,7 +13,7 @@ if [ ! -f .env ]; then
 fi
 
 # Install PHP dependencies
-composer install --no-interaction
+composer install --no-dev --no-interaction
 
 # Create Python venv
 if [ ! -d bot/.venv ]; then
