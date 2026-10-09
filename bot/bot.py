@@ -1,4 +1,6 @@
 import os
+import re
+import subprocess
 from pathlib import Path
 from typing import Any, cast
 
@@ -10,20 +12,31 @@ from dotenv import load_dotenv
 
 
 BASE_DIR = Path(__file__).resolve().parent
+CONFIG_PATH = BASE_DIR.parent / 'config.php'
 ENV_PATH = BASE_DIR / '.env'
 
 load_dotenv(ENV_PATH, override=True)
-
 TOKEN = os.getenv('DISCORD_TOKEN')
+
+
+result = subprocess.run(
+    ['php', '-r', f'require "{CONFIG_PATH}"; echo $registration_table;'],
+    capture_output=True,
+    text=True,
+    check=True,
+)
+
+REGISTRATION_TABLE = result.stdout.strip()
+
+if not re.fullmatch(r'[A-Za-z0-9_]+', REGISTRATION_TABLE):
+    raise ValueError('Invalid registration table name')
 
 DB_HOST = os.getenv('DB_HOST')
 DB_NAME = os.getenv('DB_NAME')
 DB_USER = os.getenv('DB_USER')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 
-
 intents = discord.Intents.default()
-
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 
@@ -45,9 +58,9 @@ async def check(interaction: discord.Interaction, query: str):
         cursor = connection.cursor(dictionary=True, buffered=True)
 
         cursor.execute(
-            """
+            f"""
             SELECT name, student_id, grade, category
-            FROM registrations
+            FROM `{REGISTRATION_TABLE}`
             WHERE student_id = %s OR name = %s
             """,
             (query, query),
