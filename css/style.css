@@ -102,7 +102,6 @@ footer {
   background: transparent;
   border: 2px solid #ffffff;
   border-radius: 0px;
-  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
 
@@ -149,40 +148,19 @@ footer {
   width: 50px;
   height: 50px;
   background-color: #222;
-  -webkit-animation: sk-rotatePlane 1.2s infinite ease-in-out;
   animation: sk-rotatePlane 1.2s infinite ease-in-out;
-}
-
-@-webkit-keyframes sk-rotatePlane {
-  0% {
-    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-  }
-
-  50% {
-    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-  }
-
-  100% {
-    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-  }
 }
 
 @keyframes sk-rotatePlane {
   0% {
-    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
   }
 
   50% {
-    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
     transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
   }
 
   100% {
-    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
 }
@@ -258,18 +236,11 @@ footer {
     Intro section              
 -----------------------------------------*/
 #intro {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   color: #ffffff;
   background: url('../images/intro-bg.jpg') 50% 0 repeat-y fixed;
   background-position: center center;
-  -webkit-background-size: cover;
   background-size: cover;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   height: 100vh;
   align-items: center;
   text-align: center;
@@ -459,7 +430,6 @@ footer {
   color: #ffffff;
   background: url('../images/register-bg.jpg') 50% 0 repeat-y fixed;
   background-position: center center;
-  -webkit-background-size: cover;
   background-size: cover;
 }
 
