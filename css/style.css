@@ -346,12 +346,11 @@ footer {
   object-position: center;
 }
 
-#categories .col-md-3 {
+#categories .item {
   display: block;
   width: 100%;
   margin-bottom: 22px;
-  padding-top: 30px;
-  padding-bottom: 20px;
+  padding: 30px 15px 20px;
 }
 
 #categories .speakers-wrapper {
