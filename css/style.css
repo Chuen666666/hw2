@@ -358,6 +358,22 @@ footer {
   background: #ffffff;
 }
 
+#categories .owl-controls {
+  margin-top: 10px;
+  text-align: center;
+}
+
+#categories .owl-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+#categories .owl-page {
+  display: inline-block;
+}
+
 /*---------------------------------------
    Program section              
 -----------------------------------------*/
