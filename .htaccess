@@ -1,3 +1,5 @@
 <Files ".env">
     Require all denied
 </Files>
+
+ErrorDocument 404 /~s1151538/HW2/404.html
