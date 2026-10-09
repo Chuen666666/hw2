@@ -84,7 +84,7 @@ footer {
   text-align: center;
 }
 
-#overview h3,
+#overview h2,
 #detail h3,
 #video h3,
 #register h3,
@@ -334,7 +334,7 @@ footer {
   font-size: 18px;
 }
 
-#categories h6 {
+#categories .category-desc {
   margin-top: 4px;
   color: #666;
 }
@@ -420,6 +420,12 @@ footer {
 #program .program-content {
   min-width: 0;
   flex: 1;
+}
+
+#program .program-date {
+  margin: 0;
+  font-weight: 600;
+  font-size: 12px;
 }
 
 .nav-tabs {
