@@ -87,12 +87,9 @@ $category_text = implode('、', $category_chinese);
 
 // ---------------- PDF Information ----------------
 
-$pdf_filename = 'registration_' . $student_id . '.pdf';
-
+$pdf_filename = bin2hex(random_bytes(16)) . '.pdf';
 $pdf_path = __DIR__ . '/pdf/' . $pdf_filename;
-
 $base_url = 'https://hw2.chuen666666.com';
-
 $pdf_url = $base_url . '/pdf/' . $pdf_filename;
 
 
