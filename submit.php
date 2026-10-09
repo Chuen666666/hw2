@@ -5,10 +5,36 @@ declare(strict_types=1);
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 
-require_once('../TCPDF/tcpdf_import.php');
-require_once('../TCPDF/tcpdf_barcodes_2d.php');
-require_once('config.php');
-require_once('vendor/autoload.php');
+require_once __DIR__ . '/../TCPDF/tcpdf_import.php';
+require_once __DIR__ . '/../TCPDF/tcpdf_barcodes_2d.php';
+require_once __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$dotenv->required([
+    'DB_HOST',
+    'DB_NAME',
+    'DB_USER',
+    'DB_REGISTRATION_TABLE',
+    'SMTP_USERNAME',
+    'SMTP_PASSWORD',
+])->notEmpty();
+
+$dotenv->required('DB_PASSWORD');
+
+$host = $_ENV['DB_HOST'];
+$dbname = $_ENV['DB_NAME'];
+$username = $_ENV['DB_USER'];
+$password = $_ENV['DB_PASSWORD'];
+$registration_table = $_ENV['DB_REGISTRATION_TABLE'];
+
+$smtp_username = $_ENV['SMTP_USERNAME'];
+$smtp_password = $_ENV['SMTP_PASSWORD'];
+
+if (!preg_match('/^[A-Za-z0-9_]+$/', $registration_table)) {
+    die('Invalid database table name.');
+}
 
 
 // ---------------- Database Connection ----------------

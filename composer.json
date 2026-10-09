@@ -1,6 +1,7 @@
 {
     "require": {
-        "phpmailer/phpmailer": "^7.1"
+        "phpmailer/phpmailer": "^7.1",
+        "vlucas/phpdotenv": "^5.7"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.95"

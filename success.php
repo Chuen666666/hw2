@@ -1,8 +1,30 @@
 <?php
 
-require_once('config.php');
+require_once __DIR__ . '/vendor/autoload.php';
 
-$student_id = $_GET['student_id'] ?? '';
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+$dotenv->required([
+    'DB_HOST',
+    'DB_NAME',
+    'DB_USER',
+    'DB_REGISTRATION_TABLE',
+])->notEmpty();
+
+$dotenv->required('DB_PASSWORD');
+
+$host = $_ENV['DB_HOST'];
+$dbname = $_ENV['DB_NAME'];
+$username = $_ENV['DB_USER'];
+$password = $_ENV['DB_PASSWORD'];
+$registration_table = $_ENV['DB_REGISTRATION_TABLE'];
+
+if (!preg_match('/^[A-Za-z0-9_]+$/', $registration_table)) {
+    die('Invalid database table name.');
+}
+
+$student_id = trim($_GET['student_id'] ?? '');
 
 if ($student_id === '') {
     die('缺少學號資料');

@@ -1,8 +1,8 @@
-# PHP / private config
-config.php
+# Environment / secrets
+.env
+!example.env
 
-# Discord Bot secrets / virtual environment
-bot/.env
+# Discord Bot virtual environment / Python cache
 bot/.venv/
 bot/__pycache__/
 *.pyc
@@ -16,9 +16,10 @@ vendor/
 # PHP-CS-Fixer cache
 .php-cs-fixer.cache
 
-# Bot runtime log
+# Runtime logs
 bot/bot.log
 bot.log
+*.log
 
 # VS Code local settings
 .vscode/settings.json

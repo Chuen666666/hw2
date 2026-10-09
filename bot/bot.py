@@ -1,6 +1,5 @@
 import os
 import re
-import subprocess
 from pathlib import Path
 from typing import Any, cast
 
@@ -12,29 +11,34 @@ from dotenv import load_dotenv
 
 
 BASE_DIR = Path(__file__).resolve().parent
-CONFIG_PATH = BASE_DIR.parent / 'config.php'
-ENV_PATH = BASE_DIR / '.env'
+ENV_PATH = BASE_DIR.parent / '.env'
 
 load_dotenv(ENV_PATH, override=True)
+
 TOKEN = os.getenv('DISCORD_TOKEN')
 
+DB_HOST = os.getenv('DB_HOST', '')
+DB_NAME = os.getenv('DB_NAME', '')
+DB_USER = os.getenv('DB_USER', '')
+DB_PASSWORD = os.getenv('DB_PASSWORD', '')
+REGISTRATION_TABLE = os.getenv('DB_REGISTRATION_TABLE', '')
 
-result = subprocess.run(
-    ['php', '-r', f'require "{CONFIG_PATH}"; echo $registration_table;'],
-    capture_output=True,
-    text=True,
-    check=True,
-)
+required_values = {
+    'DISCORD_TOKEN': TOKEN,
+    'DB_HOST': DB_HOST,
+    'DB_NAME': DB_NAME,
+    'DB_USER': DB_USER,
+    'DB_REGISTRATION_TABLE': REGISTRATION_TABLE,
+}
 
-REGISTRATION_TABLE = result.stdout.strip()
+
+missing = [name for name, value in required_values.items() if not value]
+
+if missing:
+    raise RuntimeError(f'Missing environment variables: {", ".join(missing)}')
 
 if not re.fullmatch(r'[A-Za-z0-9_]+', REGISTRATION_TABLE):
     raise ValueError('Invalid registration table name')
-
-DB_HOST = os.getenv('DB_HOST')
-DB_NAME = os.getenv('DB_NAME')
-DB_USER = os.getenv('DB_USER')
-DB_PASSWORD = os.getenv('DB_PASSWORD')
 
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=intents)

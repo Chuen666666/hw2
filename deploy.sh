@@ -2,20 +2,18 @@
 
 set -e
 
-# Create a writable folder for PDFs
+# Writable
 chmod 777 pdf
 
-# Create config.php
-if [ ! -f config.php ]; then
-    cp config.example.php config.php
-    echo "Created config.php from config.example.php"
+# Create shared .env
+if [ ! -f .env ]; then
+    cp example.env .env
+    echo "Created .env from example.env"
+    echo "Please edit .env before running the application."
 fi
 
-# Create Bot .env
-if [ ! -f bot/.env ]; then
-    cp bot/example.env bot/.env
-    echo "Created bot/.env from bot/example.env"
-fi
+# Install PHP dependencies
+composer install --no-interaction
 
 # Create Python venv
 if [ ! -d bot/.venv ]; then
@@ -23,7 +21,7 @@ if [ ! -d bot/.venv ]; then
     echo "Created bot/.venv"
 fi
 
-# Install requirements.txt
+# Install Python dependencies
 bot/.venv/bin/pip install -r bot/requirements.txt
 
 echo "Deployment setup completed."
