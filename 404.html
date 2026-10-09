@@ -3,13 +3,101 @@
 
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>404｜奶龍選美大賽</title>
+
+        <link rel="icon" type="image/png" sizes="192x192" href="/images/icon-192.png">
+
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+
+        <style>
+            #error-page {
+                display: flex;
+                min-height: 100vh;
+                align-items: center;
+                text-align: center;
+                background:
+                    linear-gradient(rgba(0, 0, 0, 0.55),
+                        rgba(0, 0, 0, 0.55)),
+                    url('/images/register-bg.jpg') center center / cover no-repeat;
+            }
+
+            .error-card {
+                padding: 50px 30px;
+                color: #ffffff;
+            }
+
+            .error-code {
+                margin: 0;
+                font-weight: 600;
+                font-size: 100px;
+                line-height: 1;
+            }
+
+            .error-title {
+                margin-top: 20px;
+                font-size: 30px;
+            }
+
+            .error-text {
+                max-width: 500px;
+                margin: 20px auto 30px;
+                color: #eeeeee;
+                font-size: 16px;
+            }
+
+            .error-card .btn {
+                padding: 12px 30px;
+                border-radius: 100px;
+            }
+
+            @media (max-width: 480px) {
+                .error-code {
+                    font-size: 72px;
+                }
+
+                .error-title {
+                    font-size: 24px;
+                }
+            }
+        </style>
     </head>
 
     <body>
-        <h1>404</h1>
-        <p>找不到這個頁面。</p>
+
+        <section id="error-page">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-offset-2 col-md-8">
+                        <div class="error-card">
+
+                            <div class="error-code">404</div>
+
+                            <h1 class="error-title">
+                                這隻奶龍好像迷路了
+                            </h1>
+
+                            <p class="error-text">
+                                找不到你要瀏覽的頁面，
+                                可能是網址輸入錯誤，或頁面已經被移動。
+                            </p>
+
+                            <a href="/" class="btn btn-danger">
+                                <i class="fa fa-home"></i>
+                                回到活動首頁
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
     </body>
 
 </html>
-EOF
