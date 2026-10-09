@@ -62,7 +62,7 @@ if (!$registration) {
 
 $name = $registration['name'];
 $category = $registration['category'];
-$pdf_filename = $registration['pdf_filename'];
+$pdf_filename = bin2hex(random_bytes(16)) . '.pdf';
 
 $pdf_link = 'pdf/' . $pdf_filename;
 
