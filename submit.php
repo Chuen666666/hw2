@@ -9,6 +9,8 @@ require_once __DIR__ . '/../TCPDF/tcpdf_import.php';
 require_once __DIR__ . '/../TCPDF/tcpdf_barcodes_2d.php';
 require_once __DIR__ . '/vendor/autoload.php';
 
+session_start();
+
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
@@ -312,9 +314,7 @@ try {
 
 // ---------------- Redirect ------------------------
 
-header(
-    'Location: success.php?student_id=' .
-    urlencode($student_id)
-);
+$_SESSION['registration_student_id'] = $student_id;
 
+header('Location: success.php');
 exit;

@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 require_once __DIR__ . '/vendor/autoload.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
@@ -24,10 +26,11 @@ if (!preg_match('/^[A-Za-z0-9_]+$/', $registration_table)) {
     die('Invalid database table name.');
 }
 
-$student_id = trim($_GET['student_id'] ?? '');
+$student_id = trim($_SESSION['registration_student_id'] ?? '');
 
 if ($student_id === '') {
-    die('缺少學號資料');
+    header('Location: index.html');
+    exit;
 }
 
 try {
