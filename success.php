@@ -81,6 +81,8 @@ $pdf_link = 'pdf/' . $pdf_filename;
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
 
+    <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192.png">
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600"
           rel="stylesheet"
           type="text/css">
