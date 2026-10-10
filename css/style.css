@@ -237,13 +237,13 @@ footer {
 -----------------------------------------*/
 #intro {
   display: flex;
+  height: 100vh;
+  align-items: center;
   color: #ffffff;
+  text-align: center;
   background: url('../images/intro-bg.jpg') 50% 0 repeat-y fixed;
   background-position: center center;
   background-size: cover;
-  height: 100vh;
-  align-items: center;
-  text-align: center;
 }
 
 #intro h3 {
