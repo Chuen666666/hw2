@@ -28,6 +28,7 @@ HW2/
 ├── index.html
 ├── submit.php
 ├── success.php
+├── 403.html
 ├── 404.html
 ├── .htaccess
 ├── .env                  # 不應提交至 Git
@@ -369,16 +370,16 @@ Encryption: STARTTLS
 目前 `.htaccess` 用於：
 
 1. 阻止直接讀取 `.env`
-2. 自訂 404 頁面
-
-概念如下：
+2. 自訂 403 Forbidden 頁面
+3. 自訂 404 Not Found 頁面
 
 ```apache
 <Files ".env">
     Require all denied
 </Files>
 
-ErrorDocument 404 /~USER/HW2/404.html
+ErrorDocument 403 /~s1151538/HW2/403.html
+ErrorDocument 404 /~s1151538/HW2/404.html
 ```
 
 部署到不同帳號或網址路徑時，請修改 `ErrorDocument` 路徑。
@@ -425,7 +426,7 @@ https://hw2.chuen666666.com/
 - W3C CSS Validator
 - Desktop / Mobile responsive layout
 - PWA / Service Worker
-- 自訂 404 HTTP status
+- 自訂 403 / 404 HTTP status
 - PDF / QR Code
 - Email
 - Database

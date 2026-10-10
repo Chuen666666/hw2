@@ -2,4 +2,5 @@
     Require all denied
 </Files>
 
+ErrorDocument 403 /~s1151538/HW2/403.html
 ErrorDocument 404 /~s1151538/HW2/404.html
