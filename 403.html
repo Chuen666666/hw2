@@ -68,11 +68,6 @@
         </style>
     </head>
 
-    <script>
-        const projectPath = '/~s1151538/HW2/'
-        document.getElementById('home-link').href = location.pathname.startsWith(projectPath) ? projectPath : '/'
-    </script>
-
     <body>
 
         <section id="error-page">
@@ -110,5 +105,10 @@
         </section>
 
     </body>
+
+    <script>
+        const projectPath = '/~s1151538/HW2/'
+        document.getElementById('home-link').href = location.pathname.startsWith(projectPath) ? projectPath : '/'
+    </script>
 
 </html>
