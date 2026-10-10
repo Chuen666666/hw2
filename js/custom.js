@@ -47,9 +47,8 @@ $(document).ready(function () {
             autoPlay: 6000,
             items: 4,
             itemsDesktop: [1199, 2],
-            itemsDesktopSmall: [979, 1],
+            itemsDesktopSmall: [979, 2],
             itemsTablet: [768, 1],
-            itemsTabletSmall: [985, 1],
             itemsMobile: [479, 1]
         })
     })

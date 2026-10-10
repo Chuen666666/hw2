@@ -105,6 +105,12 @@ footer {
   transition: all 0.4s ease-in-out;
 }
 
+#intro .btn-default {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.35);
+  border-color: #ffffff;
+}
+
 #intro .btn-danger {
   background: #f2545f;
   border-color: transparent;
@@ -238,6 +244,7 @@ footer {
 #intro {
   display: flex;
   height: 100vh;
+  padding-top: 80px;
   align-items: center;
   color: #ffffff;
   text-align: center;
@@ -627,10 +634,6 @@ footer {
   .custom-navbar .nav li a {
     font-size: 11px;
     line-height: 20px;
-  }
-
-  #intro {
-    height: 65vh;
   }
 
   #video iframe {

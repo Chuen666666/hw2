@@ -73,7 +73,7 @@ public_html/
 
 因此預設路徑為：
 
-```php
+```bash
 ../TCPDF/tcpdf_import.php
 ../TCPDF/tcpdf_barcodes_2d.php
 ```
