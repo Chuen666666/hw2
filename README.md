@@ -156,7 +156,7 @@ public_html/
 ## 前端模板與套件
 
 | 元件 | 對應檔案 | 用途 |
-|---|---|---|
+| --- | --- | --- |
 | TemplateMo New Event (TM-486) | `index.html`, `css/style.css` 及相關前端結構 | 網站版型基礎 |
 | Bootstrap | `css/bootstrap.min.css`, `js/bootstrap.min.js` | Grid、Navbar、Button、Collapse 等 UI |
 | jQuery | `js/jquery.js` | 前端互動及 Bootstrap 依賴 |
@@ -232,7 +232,7 @@ mysql-connector-python
 用途：
 
 | 套件 | 用途 |
-|---|---|
+| --- | --- |
 | `discord.py` | Discord Bot |
 | `python-dotenv` | 讀取 `.env` |
 | `mysql-connector-python` | 查詢 MySQL |
