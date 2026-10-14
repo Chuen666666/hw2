@@ -4,12 +4,12 @@
     <head>
         <style>
             #register .form-group label {
-                margin-right: 12px;
+              margin-right: 12px;
             }
 
             #register .form-group {
-                margin-top: 18px;
-                margin-bottom: 20px;
+              margin-top: 18px;
+              margin-bottom: 20px;
             }
         </style>
 
@@ -544,97 +544,98 @@
                     </div>
 
                     <div class="wow fadeInUp col-md-5 col-sm-5" data-wow-delay="1s">
+                        <div class="register-form-box">
+                            <form action="submit.php" method="post" onsubmit="return validateForm();">
 
-                        <form action="submit.php" method="post" onsubmit="return validateForm();">
+                                <!-- 姓名 -->
+                                <input name="name" type="text" class="form-control" id="name" placeholder="姓名" required>
 
-                            <!-- 姓名 -->
-                            <input name="name" type="text" class="form-control" id="name" placeholder="姓名" required>
+                                <!-- 學號 -->
+                                <input name="student_id" type="text" class="form-control" id="student_id"
+                                    placeholder="學號，例如：1151538" pattern="(?:8|9|10|11)\d{5}" title="請輸入正確的元智大學學號"
+                                    required>
 
-                            <!-- 學號 -->
-                            <input name="student_id" type="text" class="form-control" id="student_id"
-                                placeholder="學號，例如：1151538" pattern="(?:8|9|10|11)\d{5}" title="請輸入正確的元智大學學號" required>
+                                <!-- 學校 Email -->
+                                <input name="email" type="email" class="form-control" id="email"
+                                    placeholder="學校信箱，例如：s1151538@mail.yzu.edu.tw"
+                                    pattern="s(?:8|9|10|11)\d{5}@mail\.yzu\.edu\.tw" title="請輸入元智大學學生信箱" required>
 
-                            <!-- 學校 Email -->
-                            <input name="email" type="email" class="form-control" id="email"
-                                placeholder="學校信箱，例如：s1151538@mail.yzu.edu.tw"
-                                pattern="s(?:8|9|10|11)\d{5}@mail\.yzu\.edu\.tw" title="請輸入元智大學學生信箱" required>
+                                <!-- 手機 -->
+                                <input name="phone" type="tel" class="form-control" id="phone"
+                                    placeholder="手機號碼，例如：0912345678" pattern="09\d{8}"
+                                    title="請輸入 10 碼手機號碼，例如 0912345678" required>
 
-                            <!-- 手機 -->
-                            <input name="phone" type="tel" class="form-control" id="phone"
-                                placeholder="手機號碼，例如：0912345678" pattern="09\d{8}" title="請輸入 10 碼手機號碼，例如 0912345678"
-                                required>
+                                <!-- 年級 -->
+                                <div class="form-group">
+                                    <label>年級</label><br>
 
-                            <!-- 年級 -->
-                            <div class="form-group">
-                                <label>年級</label><br>
+                                    <label>
+                                        <input type="radio" name="grade" value="1" required>
+                                        大一
+                                    </label>
 
-                                <label>
-                                    <input type="radio" name="grade" value="1" required>
-                                    大一
-                                </label>
+                                    <label>
+                                        <input type="radio" name="grade" value="2">
+                                        大二
+                                    </label>
 
-                                <label>
-                                    <input type="radio" name="grade" value="2">
-                                    大二
-                                </label>
+                                    <label>
+                                        <input type="radio" name="grade" value="3">
+                                        大三
+                                    </label>
 
-                                <label>
-                                    <input type="radio" name="grade" value="3">
-                                    大三
-                                </label>
+                                    <label>
+                                        <input type="radio" name="grade" value="4">
+                                        大四
+                                    </label>
 
-                                <label>
-                                    <input type="radio" name="grade" value="4">
-                                    大四
-                                </label>
+                                    <label>
+                                        <input type="radio" name="grade" value="5">
+                                        大五
+                                    </label>
 
-                                <label>
-                                    <input type="radio" name="grade" value="5">
-                                    大五
-                                </label>
+                                    <label>
+                                        <input type="radio" name="grade" value="6">
+                                        大六
+                                    </label>
 
-                                <label>
-                                    <input type="radio" name="grade" value="6">
-                                    大六
-                                </label>
+                                    <label>
+                                        <input type="radio" name="grade" value="7">
+                                        大七
+                                    </label>
+                                </div>
 
-                                <label>
-                                    <input type="radio" name="grade" value="7">
-                                    大七
-                                </label>
-                            </div>
+                                <!-- 報名組別 -->
+                                <div class="form-group">
+                                    <label>報名組別（可複選）</label><br>
 
-                            <!-- 報名組別 -->
-                            <div class="form-group">
-                                <label>報名組別（可複選）</label><br>
+                                    <label>
+                                        <input type="checkbox" name="category[]" value="digital">
+                                        電繪組
+                                    </label>
 
-                                <label>
-                                    <input type="checkbox" name="category[]" value="digital">
-                                    電繪組
-                                </label>
+                                    <label>
+                                        <input type="checkbox" name="category[]" value="hand">
+                                        手繪組
+                                    </label>
 
-                                <label>
-                                    <input type="checkbox" name="category[]" value="hand">
-                                    手繪組
-                                </label>
+                                    <label>
+                                        <input type="checkbox" name="category[]" value="doll">
+                                        玩偶組
+                                    </label>
 
-                                <label>
-                                    <input type="checkbox" name="category[]" value="doll">
-                                    玩偶組
-                                </label>
+                                    <label>
+                                        <input type="checkbox" name="category[]" value="3dprint">
+                                        3D 列印組
+                                    </label>
+                                </div>
 
-                                <label>
-                                    <input type="checkbox" name="category[]" value="3dprint">
-                                    3D 列印組
-                                </label>
-                            </div>
+                                <div class="col-md-offset-6 col-md-6 col-sm-offset-1 col-sm-10">
+                                    <input name="submit" type="submit" class="form-control" id="submit" value="送出報名">
+                                </div>
 
-                            <div class="col-md-offset-6 col-md-6 col-sm-offset-1 col-sm-10">
-                                <input name="submit" type="submit" class="form-control" id="submit" value="送出報名">
-                            </div>
-
-                        </form>
-
+                            </form>
+                        </div>
                     </div>
 
                     <div class="col-md-1"></div>

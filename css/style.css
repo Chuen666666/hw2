@@ -443,9 +443,13 @@ footer {
 #register .form-control {
   margin-bottom: 16px;
   color: #ffffff;
-  background: transparent;
-  border: 2px solid #ffffff;
+  background: rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.85);
   border-radius: 0px;
+}
+
+#register .form-control::placeholder {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 #register input.form-control {
@@ -470,6 +474,12 @@ footer {
 
 #register p {
   color: #d9d9d9;
+}
+
+.register-form-box {
+  padding: 25px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 12px;
 }
 
 /*---------------------------------------
@@ -699,5 +709,11 @@ footer {
     margin-top: 8px;
     font-size: 22px;
     line-height: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .register-form-box {
+    padding: 18px;
   }
 }
