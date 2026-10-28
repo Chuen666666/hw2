@@ -85,6 +85,18 @@ foreach ($category as $item) {
 $category_text = implode('、', $category_chinese);
 
 
+// ---------------- Escape HTML Output ----------------
+
+$html_flags = ENT_QUOTES | ENT_SUBSTITUTE;
+
+$name_html = htmlspecialchars($name, $html_flags, 'UTF-8');
+$student_id_html = htmlspecialchars($student_id, $html_flags, 'UTF-8');
+$email_html = htmlspecialchars($email, $html_flags, 'UTF-8');
+$phone_html = htmlspecialchars($phone, $html_flags, 'UTF-8');
+$grade_html = htmlspecialchars($grade, $html_flags, 'UTF-8');
+$category_html = htmlspecialchars($category_text, $html_flags, 'UTF-8');
+
+
 // ---------------- PDF Information ----------------
 
 $pdf_filename = bin2hex(random_bytes(16)) . '.pdf';
@@ -180,36 +192,36 @@ td {
 
     <tr>
         <td>姓名</td>
-        <td>$name</td>
+        <td>$name_html</td>
     </tr>
 
     <tr>
         <td>學號</td>
-        <td>$student_id</td>
+        <td>$student_id_html</td>
     </tr>
 
     <tr>
         <td>Email</td>
         <td>
-            <a href="mailto:$email">$email</a>
+            <a href="mailto:$email_html">$email_html</a>
         </td>
     </tr>
 
     <tr>
         <td>手機</td>
         <td>
-            <a href="tel:$phone">$phone</a>
+            <a href="tel:$phone_html">$phone_html</a>
         </td>
     </tr>
 
     <tr>
         <td>年級</td>
-        <td>大{$grade}</td>
+        <td>大{$grade_html}</td>
     </tr>
 
     <tr>
         <td>報名組別</td>
-        <td>$category_text</td>
+        <td>$category_html</td>
     </tr>
 
 </table>
@@ -271,17 +283,17 @@ try {
 
         <h2>奶龍選美大賽報名成功</h2>
 
-        <p>姓名：{$name}</p>
+        <p>姓名：{$name_html}</p>
 
-        <p>學號：{$student_id}</p>
+        <p>學號：{$student_id_html}</p>
 
-        <p>學校 Email：{$email}</p>
+        <p>學校 Email：{$email_html}</p>
 
-        <p>手機：{$phone}</p>
+        <p>手機：{$phone_html}</p>
 
-        <p>年級：大{$grade}</p>
+        <p>年級：大{$grade_html}</p>
 
-        <p>報名組別：{$category_text}</p>
+        <p>報名組別：{$category_html}</p>
 
         <p>
             QR Code 已附於本信附件。

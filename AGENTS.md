@@ -178,6 +178,12 @@ For CSS specificity:
 - Do not add `!important` unless there is a clear reason.
 - If two selectors have equal specificity, the later rule wins.
 
+For dynamic HTML output:
+
+- Keep database and application values unescaped; encode them for the output context at the final output point.
+- Escape user-controlled values inserted into HTML, TCPDF `writeHTML()`, or PHPMailer HTML bodies with `htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')`.
+- Do not reuse HTML-escaped values for database writes, SMTP recipient addresses, or other non-HTML contexts.
+
 ## Third-party frontend code
 
 Do not casually edit minified or vendor library files:
@@ -562,6 +568,7 @@ In particular:
 - Do not expose `.env`.
 - Do not expose database or SMTP passwords.
 - Do not expose Discord or Cloudflare Tunnel tokens.
+- Prevent HTML injection in the success page, generated PDF HTML, and confirmation email HTML by encoding dynamic values at each HTML output point.
 - Do not reintroduce predictable PDF filenames.
 - Do not reintroduce success-page IDOR via URL parameters.
 - Do not rely only on HTML/JavaScript validation.
@@ -569,6 +576,16 @@ In particular:
 - Treat generated PDF URLs as sensitive.
 - Avoid caching sensitive form submissions.
 - Preserve HTTPS for the custom PWA domain.
+
+### Known deferred security hardening
+
+The following items are known but are outside the current coursework requirements. Do not implement them unless the user explicitly expands the task scope:
+
+- Complete server-side validation for every registration field, including scalar type, format, length, allowed values, and consistency between student ID and school email.
+- Replace detailed PDO and PHPMailer errors shown to visitors with generic responses while recording diagnostic details only in protected server logs.
+- Add abuse controls for the public registration endpoint, such as rate limiting or another suitable anti-automation mechanism. A CSRF token alone is not sufficient protection against automated submissions.
+
+When production hardening is requested, reassess these items against the current deployment environment before implementation.
 
 ## Change discipline
 

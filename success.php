@@ -184,22 +184,22 @@ $pdf_link = 'pdf/' . $pdf_filename;
 
                             <p>
                                 <strong>姓名：</strong>
-                                <?= htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>
+                                <?= htmlspecialchars($name, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
                             </p>
 
                             <p>
                                 <strong>學號：</strong>
-                                <?= htmlspecialchars($student_id, ENT_QUOTES, 'UTF-8') ?>
+                                <?= htmlspecialchars($student_id, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
                             </p>
 
                             <p>
                                 <strong>報名組別：</strong>
-                                <?= htmlspecialchars($category, ENT_QUOTES, 'UTF-8') ?>
+                                <?= htmlspecialchars($category, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>
                             </p>
 
                         </div>
 
-                        <a href="<?= htmlspecialchars($pdf_link, ENT_QUOTES, 'UTF-8') ?>"
+                        <a href="<?= htmlspecialchars($pdf_link, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') ?>"
                            class="btn btn-danger"
                            target="_blank">
                             <i class="fa fa-file-pdf-o"></i>

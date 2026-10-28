@@ -394,6 +394,22 @@ DISCORD_TOKEN=
 
 正式 `.env` 不可提交至 Git。
 
+## HTML 輸出安全
+
+報名資料會輸出至成功頁、TCPDF 報名表及 HTML 確認信。這些 HTML 輸出點使用：
+
+```php
+htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')
+```
+
+處理動態值，以避免使用者輸入被瀏覽器、TCPDF 或郵件用戶端解析為 HTML。資料庫與 SMTP 收件地址仍使用未經 HTML 編碼的原始值，僅在產生 HTML 時依輸出情境進行編碼。
+
+可使用 Composer 檢查鎖定套件的已知安全公告：
+
+```bash
+composer audit --locked --no-interaction
+```
+
 ## Apache / `.htaccess`
 
 `.htaccess` 用於：
