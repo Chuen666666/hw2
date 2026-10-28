@@ -110,21 +110,25 @@ Main technologies:
 ### Important frontend files
 
 `index.html`
+
 - Main page structure and registration form.
 - Uses POST to `submit.php`.
 - Form `name` attributes must continue matching the PHP `$_POST` keys.
 
 `css/style.css`
+
 - Main project-specific styling.
 - Responsive rules are defined with media queries.
 - Prefer modifying this file rather than third-party CSS.
 - Keep selectors scoped where practical, e.g. `#register .form-control`.
 
 `js/custom.js`
+
 - Main UI behavior.
 - Contains Owl Carousel configuration.
 
 `js/register.js`
+
 - Client-side form validation.
 - Client-side validation is for UX only and is not a security boundary.
 
@@ -407,6 +411,7 @@ images/icon-512.png
 Responsibilities:
 
 `manifest.json`
+
 - app metadata
 - name/short name
 - icons
@@ -414,9 +419,11 @@ Responsibilities:
 - display behavior
 
 `js/pwa.js`
+
 - registers the Service Worker
 
 `service-worker.js`
+
 - intercepts supported fetch requests
 - uses browser Cache API / network logic
 
