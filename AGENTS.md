@@ -58,7 +58,9 @@ HW2/
 │   └── pwa.js
 ├── images/
 ├── pdf/
+│   └── AGENTS.md
 ├── bot/
+│   ├── AGENTS.md
 │   ├── bot.py
 │   ├── requirements.txt
 │   └── .venv/
