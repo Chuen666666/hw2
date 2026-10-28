@@ -501,8 +501,14 @@ Avoid committing:
 
 ```text
 .env
+.env.*
+auth.json
 vendor/
 bot/.venv/
+__pycache__/
+pdf/*.pdf
+.vscode/
+.idea/
 ```
 
 Generated registration PDFs should normally stay out of version control.

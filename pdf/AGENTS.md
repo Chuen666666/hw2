@@ -12,6 +12,7 @@ This directory is runtime storage for generated registration PDFs. `.gitkeep` pr
 
 - Treat every generated PDF and its URL as sensitive registration data.
 - Never commit, attach, publish, or inspect real registration PDFs unless the user explicitly requests an authorized task involving them.
+- Keep the repository-level `pdf/*.pdf` ignore rule in place so random runtime filenames cannot be staged accidentally.
 - Keep filenames unpredictable and generated with a cryptographically secure random value. Never derive a filename from a student ID, name, email address, phone number, or another predictable identifier.
 - The QR Code must continue pointing to the corresponding random PDF URL rather than embedding PDF data.
 - Do not add directory indexes or another listing mechanism that exposes generated filenames.

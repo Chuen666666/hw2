@@ -1,28 +1,45 @@
 # Environment / secrets
 .env
+.env.*
 !example.env
+auth.json
 
 # Discord Bot virtual environment / Python cache
 bot/.venv/
-bot/__pycache__/
-*.pyc
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
 
 # Generated PDFs
-pdf/registration_*.pdf
+pdf/*.pdf
 
 # Composer dependencies
 vendor/
+composer.phar
 
-# PHP-CS-Fixer cache
+# PHP tooling / test output
 .php-cs-fixer.cache
+.phpunit.cache/
+.phpunit.result.cache
+coverage/
 
 # Runtime logs
 bot/bot.log
 bot.log
 *.log
 
-# VS Code local settings
-.vscode/settings.json
+# Editor settings
+.vscode/
+.idea/
+.fleet/
+
+# Temporary / backup files
+*.tmp
+*.bak
+*.swp
+*~
 
 # OS junk
 .DS_Store
