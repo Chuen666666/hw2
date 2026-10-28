@@ -457,8 +457,11 @@ footer {
 }
 
 #register input[type="submit"] {
+  display: block;
+  width: 260px;
+  max-width: 100%;
   height: 50px;
-  margin-top: 12px;
+  margin: 28px auto 0;
   color: #ffffff;
   letter-spacing: 2px;
   background: #f2545f;
@@ -480,6 +483,17 @@ footer {
   padding: 25px;
   background: rgba(0, 0, 0, 0.35);
   border-radius: 12px;
+}
+
+.submit-wrap {
+  margin-top: 28px;
+  text-align: center;
+}
+
+#register .submit-wrap input[type="submit"] {
+  display: inline-block;
+  width: 260px;
+  max-width: 100%;
 }
 
 /*---------------------------------------
