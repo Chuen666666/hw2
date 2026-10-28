@@ -9,6 +9,7 @@ from discord import app_commands
 from discord.ext import commands
 from dotenv import load_dotenv
 
+
 BASE_DIR = Path(__file__).resolve().parent
 ENV_PATH = BASE_DIR.parent / '.env'
 
